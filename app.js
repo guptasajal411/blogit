@@ -2,6 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const _ = require("lodash");
 const ejs = require("ejs");
 
 const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
@@ -45,11 +46,13 @@ app.post("/compose", function(req, res) {
 
 // express dynamic routing with route parameters
 app.get("/posts/:route", function(req, res){
-	var route = req.params.route;
+	var lowerRoute = _.lowerCase(req.params.route);
 	posts.forEach(function(post){
-		if (post.titleInput === route){
+		if (_.lowerCase(post.titleInput) === lowerRoute){
 			console.log("Match found!");
-			return 0;
+		}
+		else{
+			console.log("Match not found :(")
 		}
 	})
 	res.redirect("/");
