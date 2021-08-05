@@ -44,9 +44,15 @@ app.post("/compose", function(req, res) {
 })
 
 // express dynamic routing with route parameters
-app.get("/:route", function(req, res){
-	console.log(req.params.route);
-	res.redirect("/")
+app.get("/posts/:route", function(req, res){
+	var route = req.params.route;
+	posts.forEach(function(post){
+		if (post.titleInput === route){
+			console.log("Match found!");
+			return 0;
+		}
+	})
+	res.redirect("/");
 })
 
 app.listen(3000, function () {
