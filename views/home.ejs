@@ -4,6 +4,7 @@
         <%= homeStartingContent %>
     </p>
     <% posts.forEach(function(post){ %>
-        <% console.log(post.titleInput); %>
+        <h1><%= post.titleInput %></h1>
+        <p> <%= post.blogInput %> </p>
     <% }) %>
 <%- include("partials/footer") -%>
