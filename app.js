@@ -43,6 +43,12 @@ app.post("/compose", function(req, res) {
 	res.redirect("/");
 })
 
+// express dynamic routing with route parameters
+app.get("/:route", function(req, res){
+	console.log(req.params.route);
+	res.redirect("/")
+})
+
 app.listen(3000, function () {
 	console.log("Server started on port 3000");
 });
