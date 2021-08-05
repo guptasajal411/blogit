@@ -14,6 +14,8 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+var posts = [];
+console.log(typeof(posts));
 
 app.get("/", function(req, res) {
 	res.render("home", {homeStartingContent: homeStartingContent});
@@ -36,8 +38,9 @@ app.post("/compose", function(req, res) {
 		titleInput: req.body.titleInput,
 		blogInput: req.body.blogInput
 	}
-	console.log(post.titleInput);
-	console.log(post.blogInput);
+	posts.unshift(post);
+	console.log(posts);
+	res.redirect("/");
 })
 
 app.listen(3000, function () {
