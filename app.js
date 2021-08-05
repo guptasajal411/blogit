@@ -14,11 +14,11 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-var posts = [];
-console.log(typeof(posts));
+let posts = [];
 
 app.get("/", function(req, res) {
-	res.render("home", {homeStartingContent: homeStartingContent});
+	console.log(posts);
+	res.render("home", {homeStartingContent: homeStartingContent, posts: posts});
 })
 
 app.get("/about", function(req, res) {
@@ -39,7 +39,7 @@ app.post("/compose", function(req, res) {
 		blogInput: req.body.blogInput
 	}
 	posts.unshift(post);
-	console.log(posts);
+	// console.log(posts);
 	res.redirect("/");
 })
 
