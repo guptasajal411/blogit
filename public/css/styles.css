@@ -1,9 +1,23 @@
+.navbar{
+	font-family: "Josefin Sans";
+}
+
+.navbar-brand{
+	font-size: 2rem!important;
+	font-style: italic;
+}
+
 .navbar-nav{
     flex-direction:row!important;
 }
 
 .footer-padding {
 	padding-bottom: 60px;
+}
+
+h1{
+	font-family: "Josefin Sans";
+	font-weight: 700;
 }
 
 h1:nth-child(1){
