@@ -50,6 +50,7 @@ app.get("/posts/:route", function(req, res){
 	posts.forEach(function(post){
 		if (_.lowerCase(post.titleInput) === lowerRoute){
 			console.log("Match found!");
+			res.render("post", {titleInput: post.titleInput, blogInput: post.blogInput})
 		}
 		else{
 			console.log("Match not found :(")
