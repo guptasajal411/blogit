@@ -6,6 +6,10 @@
 	padding-bottom: 60px;
 }
 
+h1:nth-child(1){
+	margin-top: 5%;
+}
+
 .footer {
 	position: absolute;
 	text-align: center;
