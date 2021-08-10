@@ -23,6 +23,10 @@
 	font-family: "Josefin Sans";
 }
 
+button a{
+	text-decoration: none;
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }
