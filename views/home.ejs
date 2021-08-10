@@ -4,14 +4,17 @@
         <%= homeStartingContent %>
             <a href="/compose">Get started!</a>
     </p>
+    <div class="d-grid gap-2 pt-3 pb-4">
+        <button class="btn btn-outline-info" type="button">Compose your own blog!</button>
+    </div>
     <div class="row row-cols-md-1 row-cols-lg-3 g-4">
         <% posts.forEach(function(post){ %>
             <div class="col">
                 <div class="card shadow border-info h-100">
                     <div class="card-body">
-                        <h5 class="card-title">
+                        <h4 class="card-title">
                             <%= post.titleInput %>
-                        </h5>
+                        </h4>
                         <p class="card-text">
                             <%= post.blogInput.substring(0, 200) + "... " %>
                         </p>
@@ -25,4 +28,8 @@
             </div>
             <% }) %>
     </div>
+    <div class="d-grid gap-2 pt-4 pb-3">
+        <button class="btn btn-outline-info" type="button">Compose your own blog!</button>
+    </div>
+</div>
     <%- include("partials/footer") -%>
