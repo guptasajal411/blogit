@@ -11,6 +11,14 @@
     flex-direction:row!important;
 }
 
+.card{
+	transition: transform 0.2s;
+}
+
+.card:hover{
+	transform: scale(1.033);
+}
+
 .footer-padding {
 	padding-bottom: 60px;
 }

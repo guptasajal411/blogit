@@ -7,16 +7,20 @@
     <div class="row row-cols-md-1 row-cols-lg-3 g-4">
         <% posts.forEach(function(post){ %>
             <div class="col">
-                <div class="card h-100">
+                <div class="card shadow border-info h-100">
                     <div class="card-body">
                         <h5 class="card-title">
                             <%= post.titleInput %>
                         </h5>
                         <p class="card-text">
-                            <%= post.blogInput.substring(0, 200) + "... " %><br><a
-                                    href="/posts/<%= post.titleInput.replace(" ", " -")%>">Read More</a>
+                            <%= post.blogInput.substring(0, 200) + "... " %>
                         </p>
                     </div>
+                    <a href="/posts/<%= post.titleInput.replace(" ", " -")%>">
+                        <div class="card-footer">
+                            Read More
+                        </div>
+                    </a>
                 </div>
             </div>
             <% }) %>
