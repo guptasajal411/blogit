@@ -23,6 +23,10 @@
 	font-family: "Josefin Sans";
 }
 
+.text-muted{
+	text-align: right;
+}
+
 a{
 	text-decoration: none!important;
 }
@@ -61,4 +65,10 @@ h1:nth-child(1){
 	margin-top: 25px;
 	font-size: 12px;
     color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+	.text-muted{
+		text-align: left;
+	}
 }
