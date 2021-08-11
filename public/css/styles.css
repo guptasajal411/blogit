@@ -7,9 +7,9 @@
 	font-style: italic;
 }
 
-.navbar-nav{
+/* .navbar-nav{
     flex-direction:row!important;
-}
+} */
 
 .card{
 	transition: transform 0.15s;
