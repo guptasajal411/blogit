@@ -4,14 +4,11 @@
         <%= homeStartingContent %>
             <a href="/compose">Get started!</a>
     </p>
-    <div class="d-grid gap-2 pt-3 pb-4">
+    <a class="d-grid gap-2 pt-3 pb-4" href="/compose">
         <button class="btn btn-outline-info" type="button">
-            <a href="/compose">
                 Compose your own blog!
-            </a>
         </button>
-        
-    </div>
+    </a>
     <div class="row row-cols-md-1 row-cols-lg-3 g-4">
         <% posts.forEach(function(post){ %>
             <div class="col">
@@ -33,14 +30,10 @@
             </div>
             <% }) %>
     </div>
-    <div class="d-grid gap-2 pt-4 pb-3">
-        <a href="/compose">
+    <a class="d-grid gap-2 pt-4 pb-3" href="/compose">
             <button class="btn btn-outline-info" type="button">
-                <a href="/compose">
                     Compose your own blog!
-                </a>
             </button>
         </a>
-    </div>
 </body>
 </html>

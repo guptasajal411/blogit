@@ -23,8 +23,16 @@
 	font-family: "Josefin Sans";
 }
 
-button a{
-	text-decoration: none;
+a{
+	text-decoration: none!important;
+}
+
+button{
+	color: black!important;
+}
+
+button:hover{
+	color: white!important;
 }
 
 .footer-padding {
