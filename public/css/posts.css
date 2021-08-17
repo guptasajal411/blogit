@@ -1,0 +1,9 @@
+.wrapperForBlogImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogImage{
+    width: 50%;
+}

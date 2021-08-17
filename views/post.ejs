@@ -1,8 +1,11 @@
 <%- include("partials/header") -%>
+        <link rel="stylesheet" href="/css/posts.css">
         <h1>
             <%= titleInput %>
         </h1>
-        <img src="<%= blogImage %>" alt="" style="width: 100%">
+        <div class="wrapperForBlogImage">
+            <img src="<%= blogImage %>" alt="" class="blogImage">
+        </div>
         <p>
             <%= blogInput %>
         </p>
