@@ -55,23 +55,25 @@ app.post("/compose", function (req, res) {
 		var post = {
 			titleInput: req.body.titleInput,
 			blogInput: req.body.blogInput,
-			timeStamp: newDate.getHours() + ":" + newDate.getMinutes() + " AM"
+			timeStamp: newDate.getHours() + ":" + newDate.getMinutes() + " AM",
+			blogImage: req.body.blogImage
 		}
 	} else if (newDate.getHours() == 12) {
 		var post = {
 			titleInput: req.body.titleInput,
 			blogInput: req.body.blogInput,
-			timeStamp: newDate.getHours() + ":" + newDate.getMinutes() + " PM"
+			timeStamp: newDate.getHours() + ":" + newDate.getMinutes() + " PM",
+			blogImage: req.body.blogImage
 		}
 	} else {
 		var post = {
 			titleInput: req.body.titleInput,
 			blogInput: req.body.blogInput,
-			timeStamp: newDate.getHours() - 12 + ":" + newDate.getMinutes() + " PM"
+			timeStamp: newDate.getHours() - 12 + ":" + newDate.getMinutes() + " PM",
+			blogImage: req.body.blogImage
 		}
 	}
 	posts.unshift(post);
-	// console.log(posts);
 	res.redirect("/");
 })
 
