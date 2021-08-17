@@ -9,10 +9,13 @@
                 Compose your own blog!
         </button>
     </a>
+    <div>
+    </div>
     <div class="row row-cols-md-1 row-cols-lg-3 g-4">
         <% posts.forEach(function(post){ %>
             <div class="col">
                 <div class="card shadow border-info h-100">
+                    <img src="<%= post.blogImage %>" class="card-img-top" alt="">
                     <div class="card-body container">
                             <div class="row p-0">
                                 <div class="col-md-8 col-12">
