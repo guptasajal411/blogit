@@ -1,5 +1,6 @@
 # Blogit! 💻
-Welcome to Blogit! Blogit is a full stack blog application by which you can share your ideas with the world! Made with Node.js and Express.js, Blogit uses EJS template engine to dynamically create a webpage for your blog. You can compose as many blogs as you like and share it with the world!
+Welcome to Blogit! Blogit is a full stack blog application by which you can share your ideas with the world! Made with Node.js and Express.js, Blogit uses EJS template engine to dynamically create a webpage for your blog. You can compose as many blogs as you like and share it with the world!<br>
+I am also integrating and MongoDB database for storing blogs for this application ✨
 
 <p align="center">
     <img src = "https://user-images.githubusercontent.com/70312106/129069795-8b51ef01-a70b-4c4e-b56e-e1ac3f5b9713.gif">
