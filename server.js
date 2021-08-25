@@ -78,10 +78,12 @@ app.get("/", function (req, res) {
 				covid.save();
 				pangea.save();
 				// check all blogs: db.blogs.find({}, {"blogInput": 0, "blogImage": 0, "_id": 0, "__v": 0, "timeStamp": 0})
+			} else {
+				// render the page if blogs collection is not empty
+				res.render("home", { homeStartingContent: homeStartingContent, posts: blog });
 			}
 		}
 	})
-	res.render("home", { homeStartingContent: homeStartingContent, posts: posts });
 })
 
 app.get("/about", function (req, res) {
