@@ -124,11 +124,9 @@ app.post("/compose", function (req, res) {
 // express dynamic routing with route parameters
 app.get("/posts/:route", function (req, res) {
 	var lowerRoute = _.lowerCase(req.params.route);
-	Blog.findOne({ titleInput: /^lowerRoute/i }, function (err, blog) {
-		res.render("post", { titleInput: blog.titleInput, blogInput: blog.blogInput, blogImage: blog.blogImage })
+	Blog.findOne({ titleInput: lowerRoute }, function (err, blog) {
+		res.render("post", { titleInput: _.startCase(_.toLower(blog.titleInput)), blogInput: blog.blogInput, blogImage: blog.blogImage })
 	})
-	console.log(req.params.route);
-	console.log(lowerRoute);
 })
 
 app.listen(process.env.PORT || 3000, () => {
