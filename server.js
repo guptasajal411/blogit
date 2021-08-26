@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 const _ = require("lodash");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect("mongodb://localhost:27017/blogitDB")
+mongoose.connect("mongodb+srv://" + process.env.usernameMongoDB + ":" + process.env.password + "@cluster0.xgjts.mongodb.net/blogitDB");
 
 const homeStartingContent = 'Welcome to Blogit! Blogit is a dynamic blogging web application where you can publish your blogs with just a click! Go to the "Compose" page from the navbar and publish your posts. Blogit will index your newly created posts on the homepage. Blogit will also generate a custom URL with the title of your blog so you can share your blogs on the fly.';
 const aboutContent = 'Welcome to Blogit! Blogit is a dynamic blogging web application where you can publish your blogs with just a click! Just go to the "Compose" page from the navbar and publish your posts. Blogit will index your newly created posts on the homepage by which everyone around the globe can read your ideas! Blogit will also generate a custom URL with the title of your blog so you can share your blogs on the fly. This website is made with Node.js and EJS, which is a template engine.';
