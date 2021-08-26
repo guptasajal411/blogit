@@ -70,6 +70,9 @@ app.get("/", function (req, res) {
 				// check all blogs: db.blogs.find({}, {"blogInput": 0, "blogImage": 0, "_id": 0, "__v": 0, "timeStamp": 0})
 			} else {
 				// render the page if blogs collection is not empty
+				blog.forEach(function(singleBlog){
+					singleBlog.titleInput = _.startCase(_.toLower(singleBlog.titleInput));
+				})
 				res.render("home", { homeStartingContent: homeStartingContent, posts: blog.reverse() });
 			}
 		}
