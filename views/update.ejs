@@ -1,6 +1,6 @@
 <%- include("partials/header") -%>
     <h1 class="mb-4">Update your blog</h1>
-    <form action="/compose" method="POST">
+    <form action="/update" method="POST">
         <label for="searchInput" class="form-label">Search blog to be updated by the title</label>
         <input type="text" class="form-control mb-4" name="searchInput" id="searchInput" placeholder="Search in lowercase...">
 
@@ -13,7 +13,5 @@
         <label for="blogImage" class="form-label">New URL to blog image</label>
         <input type="text" class="form-control mb-4" name="blogImage" id="blogImage" placeholder="URL to blog image...">
 
-        <button type="button" class="btn btn-outline-primary randomTextButton" onclick="generateRandomText();">Use random text</button>
-        <button type="submit" class="btn btn-primary">Update your Blog!</button>
+        <button type="submit" class="btn btn-outline-primary">Update your Blog!</button>
     </form>
-    <script src="/js/index.js"></script>

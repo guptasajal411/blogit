@@ -71,7 +71,7 @@ app.get("/", function (req, res) {
 				// check all blogs: db.blogs.find({}, {"blogInput": 0, "blogImage": 0, "_id": 0, "__v": 0, "timeStamp": 0})
 			} else {
 				// render the page if blogs collection is not empty
-				blog.forEach(function(singleBlog){
+				blog.forEach(function (singleBlog) {
 					singleBlog.titleInput = _.startCase(_.toLower(singleBlog.titleInput));
 				})
 				res.render("home", { homeStartingContent: homeStartingContent, posts: blog.reverse() });
@@ -130,8 +130,23 @@ app.get("/posts/:route", function (req, res) {
 	})
 })
 
-app.get("/update", function (req, res){
+app.get("/update", function (req, res) {
 	res.render("update");
+})
+
+app.post("/update", function (req, res) {
+	console.log(_.lowerCase(req.body.searchInput));
+	console.log(_.lowerCase(req.body.titleInput));
+	Blog.findOneAndUpdate({ titleInput: _.lowerCase(req.body.searchInput) }, { titleInput: _.lowerCase(req.body.titleInput) }, null, function (err, docs) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log(docs);
+		}
+	});
+	setTimeout(function (){
+		res.redirect("/");
+	}, 1000)
 })
 
 app.listen(process.env.PORT || 3000, () => {
