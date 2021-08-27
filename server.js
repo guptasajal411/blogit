@@ -130,6 +130,10 @@ app.get("/posts/:route", function (req, res) {
 	})
 })
 
+app.get("/update", function (req, res){
+	res.render("update");
+})
+
 app.listen(process.env.PORT || 3000, () => {
 	console.log("Server started on port 3000");
 });
