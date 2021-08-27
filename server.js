@@ -135,15 +135,36 @@ app.get("/update", function (req, res) {
 })
 
 app.post("/update", function (req, res) {
-	console.log(_.lowerCase(req.body.searchInput));
-	console.log(_.lowerCase(req.body.titleInput));
-	Blog.findOneAndUpdate({ titleInput: _.lowerCase(req.body.searchInput) }, { titleInput: _.lowerCase(req.body.titleInput) }, null, function (err, docs) {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(docs);
-		}
-	});
+	if (req.body.titleInput != ""){
+		Blog.findOneAndUpdate({ titleInput: _.lowerCase(req.body.searchInput) }, { titleInput: _.lowerCase(req.body.titleInput) }, null, function (err, docs) {
+			if (err) {
+				console.log(err);
+			} else {
+				// console.log(docs);
+				// docs return the document before updation
+			}
+		});
+	}
+	if (req.body.blogInput != ""){
+		Blog.findOneAndUpdate({ titleInput: _.lowerCase(req.body.searchInput) }, { blogInput: req.body.blogInput }, null, function (err, docs) {
+			if (err) {
+				console.log(err);
+			} else {
+				// console.log(docs);
+				// docs return the document before updation
+			}
+		});
+	}
+	if (req.body.blogImage != ""){
+		Blog.findOneAndUpdate({ titleInput: _.lowerCase(req.body.searchInput) }, { blogImage: req.body.blogImage }, null, function (err, docs) {
+			if (err) {
+				console.log(err);
+			} else {
+				// console.log(docs);
+				// docs return the document before updation
+			}
+		});
+	}
 	setTimeout(function (){
 		res.redirect("/");
 	}, 1000)
