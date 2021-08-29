@@ -11,34 +11,36 @@
     </a>
     <div>
     </div>
-    <div class="row row-cols-md-1 row-cols-lg-3 g-4">
-        <% posts.forEach(function(post){ %>
-            <div class="col">
-                <div class="card shadow border-info h-100">
-                    <img src="<%= post.blogImage %>" class="card-img-top" alt="">
-                    <div class="card-body container">
-                            <div class="row p-0">
-                                <div class="col-md-8 col-12">
-                                    <h4 class="card-title text-start">
-                                        <%= post.titleInput %>
-                                    </h4>
+    <div class="container">
+        <div class="row">
+            <% posts.forEach(function(post){ %>
+                <div class="col-lg-4 col-12 py-2 px-2">
+                    <div class="card shadow border-info h-100">
+                        <img src="<%= post.blogImage %>" class="card-img-top" alt="">
+                        <div class="card-body container">
+                                <div class="row p-0">
+                                    <div>
+                                        <h4 class="card-title text-start">
+                                            <%= post.titleInput %>
+                                        </h4>
+                                    </div>
+                                    <div>
+                                        <p class="text-muted"><%= post.timeStamp %></p>
+                                    </div>
                                 </div>
-                                <div class="col-md-4 col-12">
-                                    <p class="text-muted"><%= post.timeStamp %></p>
-                                </div>
-                            </div>
-                        <p class="card-text">
-                            <%= post.blogInput.substring(0, 200) + "... " %>
-                        </p>
-                    </div>
-                    <a href="/posts/<%= post.titleInput.replace(" ", " -")%>">
-                        <div class="card-footer">
-                            Read More
+                            <p class="card-text">
+                                <%= post.blogInput.substring(0, 200) + "... " %>
+                            </p>
                         </div>
-                    </a>
+                        <a href="/posts/<%= post.titleInput.replace(" ", " -")%>">
+                            <div class="card-footer">
+                                Read More
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <% }) %>
+                <% }) %>
+        </div>
     </div>
     <a class="d-grid gap-2 pt-4 pb-3" href="/compose">
             <button class="btn btn-outline-info" type="button">
